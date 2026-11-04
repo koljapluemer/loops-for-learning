@@ -1,0 +1,28 @@
+# Developer tools and tasks. After cloning (next to a checkout of gestalts, see README): `mise install`, then
+# `mise run dev`.
+
+[tools]
+node = "26.12.0"
+pnpm = "10.32.1"
+
+[tasks.setup]
+description = "The gestalts checkout next to this one (its packages and the core in wasm), then this app's JS dependencies"
+run = [
+  "mise -C ../gestalts run setup",
+  "pnpm install",
+]
+
+[tasks.dev]
+description = "The app on :5174 with hot reload (start the Gestalter's desktop app too, to sync with a folder)"
+depends = ["setup"]
+run = "pnpm dev"
+
+[tasks.check]
+description = "Lints and typechecks"
+depends = ["setup"]
+run = ["pnpm lint", "pnpm typecheck"]
+
+[tasks.build]
+description = "Production build into dist/, static files to host anywhere"
+depends = ["setup"]
+run = "pnpm build"
