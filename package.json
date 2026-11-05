@@ -10,7 +10,8 @@
     "lint": "oxlint src"
   },
   "dependencies": {
-    "@gestalts-plugin/greek-alphabet": "link:../gestalts/plugins/greek-alphabet",
+    "@gestalts-plugin/alphabet-pronunciation-via-visual-cognates": "link:../gestalt-plugins/sam-learns/alphabet-pronunciation-via-visual-cognates",
+    "@gestalts-plugin/learn-world-map": "link:../gestalt-plugins/sam-learns/learn-world-map",
     "@gestalts/client": "link:../gestalts/packages/client",
     "@gestalts/sdk": "link:../gestalts/packages/sdk",
     "@gestalts/ui": "link:../gestalts/packages/ui",

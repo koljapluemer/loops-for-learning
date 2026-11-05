@@ -8,9 +8,12 @@ importers:
 
   .:
     dependencies:
-      '@gestalts-plugin/greek-alphabet':
-        specifier: link:../gestalts/plugins/greek-alphabet
-        version: link:../gestalts/plugins/greek-alphabet
+      '@gestalts-plugin/alphabet-pronunciation-via-visual-cognates':
+        specifier: link:../gestalt-plugins/sam-learns/alphabet-pronunciation-via-visual-cognates
+        version: link:../gestalt-plugins/sam-learns/alphabet-pronunciation-via-visual-cognates
+      '@gestalts-plugin/learn-world-map':
+        specifier: link:../gestalt-plugins/sam-learns/learn-world-map
+        version: link:../gestalt-plugins/sam-learns/learn-world-map
       '@gestalts/client':
         specifier: link:../gestalts/packages/client
         version: link:../gestalts/packages/client

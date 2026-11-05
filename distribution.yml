@@ -1,3 +1,5 @@
-# The public Demo: the host with its one plugin (greek-alphabet, from package.json), shown alone
-default_panes: [greek-alphabet/practice]
+# The public app (`id`, kept for good: pane notes record it): the host with its plugins (from package.json), one pane
+# at a time
+id: loops-for-learning
+default_panes: [learn-world-map/practice, alphabet-pronunciation-via-visual-cognates/practice]
 install_ui: false
