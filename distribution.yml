@@ -1,5 +1,4 @@
-# The public app (`id`, kept for good: pane notes record it): the host with its plugins (from package.json), one pane
-# at a time
-id: loops-for-learning
-default_panes: [learn-world-map/practice, alphabet-pronunciation-via-visual-cognates/practice]
-install_ui: false
+# The public app (`id` is its for good): every plugin here is a learning view, shown one at a time.
+id: loops
+plugins:
+  - ../gestalt-plugins/sam-learns/alphabet-pronunciation-trainer

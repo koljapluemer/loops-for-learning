@@ -8,21 +8,21 @@ importers:
 
   .:
     dependencies:
-      '@gestalts-plugin/alphabet-pronunciation-via-visual-cognates':
-        specifier: link:../gestalt-plugins/sam-learns/alphabet-pronunciation-via-visual-cognates
-        version: link:../gestalt-plugins/sam-learns/alphabet-pronunciation-via-visual-cognates
-      '@gestalts-plugin/learn-world-map':
-        specifier: link:../gestalt-plugins/sam-learns/learn-world-map
-        version: link:../gestalt-plugins/sam-learns/learn-world-map
       '@gestalts/client':
         specifier: link:../gestalts/packages/client
         version: link:../gestalts/packages/client
-      '@gestalts/sdk':
-        specifier: link:../gestalts/packages/sdk
-        version: link:../gestalts/packages/sdk
-      '@gestalts/ui':
-        specifier: link:../gestalts/packages/ui
-        version: link:../gestalts/packages/ui
+      '@gestalts/host':
+        specifier: link:../gestalts/packages/host
+        version: link:../gestalts/packages/host
+      '@gestalts/kit':
+        specifier: link:../gestalts/packages/kit
+        version: link:../gestalts/packages/kit
+      '@gestalts/learning':
+        specifier: link:../gestalts/packages/learning
+        version: link:../gestalts/packages/learning
+      '@gestalts/view':
+        specifier: link:../gestalts/packages/view
+        version: link:../gestalts/packages/view
       '@gestalts/vite':
         specifier: link:../gestalts/packages/vite
         version: link:../gestalts/packages/vite
