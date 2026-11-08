@@ -30,5 +30,4 @@ mise run check        # lints, typechecks
 mise run build        # dist/: static files to host anywhere
 ```
 
-Plugins are the `@gestalts-plugin/*` dependencies in `package.json`; `distribution.yml` names the
-distribution (`id`, recorded in pane notes, so it doesn't change) and says which panes it opens with.
+`distribution.yml` lists the plugins by path; every one tagged `learning` becomes a tab.
