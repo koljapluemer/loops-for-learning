@@ -1,4 +1,5 @@
 # The public app (`id` is its for good): every plugin here is a learning view, shown one at a time.
 id: loops
 plugins:
+  - ../gestalts/plugins/flashcards
   - ../gestalt-plugins/sam-learns/alphabet-pronunciation-trainer
