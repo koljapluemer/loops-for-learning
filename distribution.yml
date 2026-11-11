@@ -3,3 +3,8 @@ id: loops
 plugins:
   - ../gestalts/plugins/flashcards
   - ../gestalt-plugins/sam-learns/alphabet-pronunciation-trainer
+  - ../gestalt-plugins/sam-learns/phrasebook
+# what views may do beyond the strict sandbox, out of what each asks for (`permissions` in its plugin.yml): only for our
+# own code, which loads nothing from elsewhere at run time
+grants:
+  phrasebook: [same-origin, microphone]

@@ -8,7 +8,7 @@ data, its decks, deployed under `decks/<plugin>/<deck>/`, which are copied on wr
 If available, notes sync to a folder on the desktop via the Gestalter's desktop app (`gestalter`, if the user is
 running it), from a browser on that same computer.
 
-So far it is the host with two views, Flashcards and the alphabet pronunciation trainer, one at a time (tabs). Its storage in the browser is still called `demo/` (from when this was the Demo).
+So far it is the host with three views, Flashcards, the alphabet pronunciation trainer and the phrasebook, one at a time (tabs). The phrasebook may record (`grants` in `distribution.yml`). Its storage in the browser is still called `demo/` (from when this was the Demo).
 
 ## Developing
 
