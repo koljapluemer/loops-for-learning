@@ -18,7 +18,8 @@
     "@gestalts/host": "link:../gestalts/packages/host",
     "@gestalts/view": "link:../gestalts/packages/view",
     "@gestalts/kit": "link:../gestalts/packages/kit",
-    "@gestalts/learning": "link:../gestalts/packages/learning"
+    "@gestalts/learning": "link:../gestalts/packages/learning",
+    "@gestalts/sources": "link:../gestalts/packages/sources"
   },
   "devDependencies": {
     "@tailwindcss/vite": "4.3.3",
