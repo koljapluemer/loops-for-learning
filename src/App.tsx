@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Settings } from 'lucide-react';
 import { registry } from 'virtual:gestalts-plugins';
 import { RepoProvider } from '@gestalts/client';
-import { ConnectorSettings, DebugLogButton, SingleView, usePluginRepo } from '@gestalts/host';
+import { ConnectorSettings, SingleView, usePluginRepo } from '@gestalts/host';
 import css from './app.css?inline';
 
 /**
@@ -38,7 +38,6 @@ export function App() {
             </button>
           ))}
         </div>
-        <DebugLogButton />
         {repo && (
           <details className="dropdown dropdown-end">
             <summary className="btn btn-sm btn-ghost btn-square" title="Sync settings"><Settings className="size-4" /></summary>
