@@ -7,7 +7,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "typecheck": "tsc -p .",
-    "lint": "oxlint src"
+    "lint": "oxlint src",
+    "test": "vitest run"
   },
   "dependencies": {
     "@gestalts/client": "link:../gestalts/packages/client",
@@ -19,7 +20,8 @@
     "@gestalts/view": "link:../gestalts/packages/view",
     "@gestalts/kit": "link:../gestalts/packages/kit",
     "@gestalts/learning": "link:../gestalts/packages/learning",
-    "@gestalts/sources": "link:../gestalts/packages/sources"
+    "@gestalts/sources": "link:../gestalts/packages/sources",
+    "@tailwindcss/browser": "4.3.3"
   },
   "devDependencies": {
     "@tailwindcss/vite": "4.3.3",
@@ -33,6 +35,7 @@
     "oxlint-tsgolint": "7.0.2005",
     "tailwindcss": "4.3.3",
     "typescript": "7.0.2",
-    "vite": "8.3.5"
+    "vite": "8.3.5",
+    "vitest": "5.0.5"
   }
 }

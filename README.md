@@ -1,21 +1,21 @@
 # loops-for-learning
 
-An educational app, deployed as a static site, offering access to a very broad range of interactive educational
-mini tools. Based on the [gestalts](../gestalts) data paradigm.
-Each interactive edu mini tool is a plugin (in [gestalt-plugins](../gestalt-plugins)) and comes with "recommended"
-data, its decks, deployed under `decks/<plugin>/<deck>/`, which are copied on write into the user-space yml collection.
+Loops has two modes over the [gestalts](../gestalts) data model:
 
-If available, notes sync to a folder on the desktop via the Gestalter's desktop app (`gestalter`, if the user is
-running it), from a browser on that same computer.
+- **Learn** runs the learning plugins from `distribution.yml`, one view at a time.
+- **Make** creates `view@1` drafts, previews them live, and can ask a local Claude CLI agent to edit them.
 
-So far it is the host with three views, Flashcards, the alphabet pronunciation trainer and the phrasebook, one at a time (tabs). The phrasebook may record (`grants` in `distribution.yml`). Its storage in the browser is still called `demo/` (from when this was the Demo).
+Learn data remains in the browser's `loops` repository and can optionally sync through Gestalter. Make deliberately
+keeps the former Workshop storage contract: drafts use `workshop-views`, the local node uses `$WORKSHOP_DATA` (default
+`~/gestalt-workshop-views`), and agent workspaces use `$WORKSHOP_WORKSPACES` (default
+`~/.local/share/gestalt-workshop/workspaces`). Existing drafts, sessions and run logs therefore continue to work.
 
 ## Developing
 
-Needs [mise](https://mise.jdx.dev) and checkouts of gestalts and gestalt-plugins next to this one: until they are
-published, this app links their packages and plugins by path.
+Needs [mise](https://mise.jdx.dev), [rustup](https://rustup.rs), the `claude` CLI for agent-backed Make sessions, and
+checkouts of `gestalts` and `gestalt-plugins` beside this repository.
 
-```
+```text
 parent/
   gestalts/
   gestalt-plugins/
@@ -23,10 +23,15 @@ parent/
 ```
 
 ```sh
-mise install          # once after cloning, and when mise.toml changes
-mise run dev          # the app on :5174 with hot reload, gestalts and the plugins included
-mise run check        # lints, typechecks
-mise run build        # dist/: static files to host anywhere
+mise install          # once, and when mise.toml changes
+mise run dev          # Make node on :7727 and app on :5174
+mise run app          # app only; Make preview still works without an agent
+mise run node         # local Make node only
+mise run check        # lint, types, JS/Python tests, agent-template example
+mise run build        # production static app in dist/
+mise run agent-stats  # summarize private local agent run logs
 ```
 
-`distribution.yml` lists the plugins by path; every one tagged `learning` becomes a tab.
+`distribution.yml` lists the learning plugins; every plugin tagged `learning` becomes a Learn tab. See
+[`doc/workshop-architecture.md`](doc/workshop-architecture.md) for the local Make architecture and
+[`doc/workshop-integration.md`](doc/workshop-integration.md) for the deferred promotion roadmap.

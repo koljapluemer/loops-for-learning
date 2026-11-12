@@ -1,6 +1,12 @@
 # Folding gestalt-workshop into Loops for Learning
 
-Status: proposal
+Status: consolidation implemented; promotion roadmap deferred
+
+The standalone Workshop UI, local backend, agent template, scripts, checks and documentation now live in
+`loops-for-learning`, with Learn and Make modes. The fold intentionally preserves `view@1`, `workshop-views`, the
+`WORKSHOP_*` environment variables and the local agent protocol so existing drafts and sessions require no migration.
+The promotion, remix, source-root, worktree and GitHub sections below remain design notes rather than implemented
+features; source-to-draft remixing is explicitly out of scope for this consolidation.
 
 ## Summary
 

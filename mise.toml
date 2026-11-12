@@ -4,23 +4,44 @@
 [tools]
 node = "26.12.0"
 pnpm = "10.32.1"
+uv = "0.13.6"
 
 [tasks.setup]
-description = "The gestalts and gestalt-plugins checkouts next to this one (packages, the core in wasm, plugins), then this app's JS dependencies"
+description = "The shared checkouts, this app's dependencies and the Make agent template"
 run = [
   "mise -C ../gestalt-plugins run setup",
   "pnpm install",
+  "pnpm -C agent-template install --ignore-workspace",
 ]
 
-[tasks.dev]
-description = "The app on :5174 with hot reload (start the Gestalter's desktop app too, to sync with a folder)"
+[tasks.app]
+description = "The Loops app on :5174 without the local Make agent"
 depends = ["setup"]
 run = "pnpm dev"
 
-[tasks.check]
-description = "Lints and typechecks"
+[tasks.node]
+description = "The local Make node on :7727, using $WORKSHOP_DATA or ~/gestalt-workshop-views"
+run = "scripts/node.sh"
+
+[tasks.dev]
+description = "The local Make node and the app on :5174 with hot reload"
 depends = ["setup"]
-run = ["pnpm lint", "pnpm typecheck"]
+run = "scripts/dev.sh"
+
+[tasks.check]
+description = "Lint, typecheck, test, and verify the Make agent template"
+depends = ["setup"]
+run = [
+  "pnpm lint",
+  "pnpm typecheck",
+  "pnpm test",
+  "python3 -m unittest discover -s tests",
+  "scripts/check-example.sh",
+]
+
+[tasks.agent-stats]
+description = "Summarize local Make agent time, token use, cost and tool activity"
+run = "python3 scripts/agent_stats.py"
 
 [tasks.build]
 description = "Production build into dist/, static files to host anywhere"
